@@ -27,7 +27,7 @@
   },
   "main": "dist/plugin-template.js",
   "module": "dist/plugin-template.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/plugin-template.d.ts",
   "sideEffects": false,
   "files": [
     "dist/plugin-template.js",
