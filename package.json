@@ -27,6 +27,7 @@
   },
   "main": "dist/plugin-template.js",
   "module": "dist/plugin-template.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
     "dist/plugin-template.js",
@@ -36,7 +37,7 @@
     "LICENSE"
   ],
   "peerDependencies": {
-    "melonjs": "^15.0.0"
+    "melonjs": "^15.1.6"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.3",
@@ -48,12 +49,14 @@
     "eslint": "^8.36.0",
     "eslint-plugin-jsdoc": "^40.0.3",
     "rollup": "^3.19.1",
-    "rollup-plugin-bundle-size": "^1.0.3"
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "typescript": "^5.0.4"
   },
   "scripts": {
-    "build": "npm run lint && rollup -c --silent",
+    "build": "npm run lint && rollup -c --silent && npm run types",
     "lint": "eslint src/**.js rollup.config.mjs",
     "prepublishOnly": "npm run build",
-    "clean": "del-cli --force dist"
+    "clean": "del-cli --force dist",
+    "types": "tsc"
   }
 }

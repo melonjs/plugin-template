@@ -22,12 +22,13 @@ Build your plugin by running:
 
 The generated files will be available under the `dist` directory :
 - `plugin-template.js` (as per the default name in the package.json)
+- `index.d.ts` (typings for the plugin)
 
-for more information about plugin and how to patch method, see our documentation here.
+For more information about plugin and how to patch method, see our documentation [here](https://melonjs.github.io/melonJS/docs/melonjs/plugin.html).
 
 Questions, need help ?
 -------------------------------------------------------------------------------
 If you need technical support, you can contact us through the following channels :
 * Forums: with melonJS 2 we moved to a new discourse [forum](https://melonjs.discourse.group), but we can still also find the previous one [here](http://www.html5gamedevs.com/forum/32-melonjs/)
-* Chat: come and chat with us on [discord](https://discord.gg/aur7JMk), or [gitter](https://gitter.im/melonjs/public)
+* Chat: come and chat with us on [discord](https://discord.gg/aur7JMk)
 * we tried to keep our [wikipage](https://github.com/melonjs/melonJS/wiki) up-to-date with useful links, tutorials, and anything related melonJS.
