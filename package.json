@@ -1,6 +1,6 @@
 {
   "name": "plugin-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "melonJS plugin template",
   "type": "module",
   "keywords": [
@@ -30,14 +30,14 @@
   "types": "dist/plugin-template.d.ts",
   "sideEffects": false,
   "files": [
-    "dist/plugin-template.js",
+    "dist/",
     "src/",
     "package.json",
     "README.md",
     "LICENSE"
   ],
   "peerDependencies": {
-    "melonjs": "^15.1.6"
+    "melonjs": "^15.2.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.8",
@@ -47,7 +47,7 @@
     "@rollup/plugin-replace": "^5.0.2",
     "del-cli": "^5.0.0",
     "eslint": "^8.40.0",
-    "eslint-plugin-jsdoc": "^44.2.2",
+    "eslint-plugin-jsdoc": "^44.2.3",
     "rollup": "^3.21.6",
     "rollup-plugin-bundle-size": "^1.0.3",
     "typescript": "^5.0.4"
