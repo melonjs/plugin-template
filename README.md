@@ -22,7 +22,7 @@ Build your plugin by running:
 
 The generated files will be available under the `dist` directory :
 - `plugin-template.js` (as per the default name in the package.json)
-- `index.d.ts` (typings for the plugin)
+- `plugin-template.d.ts` (typings for the plugin)
 
 For more information about plugin and how to patch method, see our documentation [here](https://melonjs.github.io/melonJS/docs/melonjs/plugin.html).
 
