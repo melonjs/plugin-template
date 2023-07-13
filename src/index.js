@@ -5,12 +5,12 @@ import { plugin } from "melonjs";
  * an emply plugin
  * @augments plugin.Base
  */
-export class DebugPanelPlugin extends plugin.Base {
+export class DebugPanelPlugin extends plugin.BasePlugin {
     constructor() {
         // call the super constructor
         super();
 
         // minimum melonJS version expected to run this plugin
-        this.version = "15.0.0";
+        this.version = "15.2.0";
     }
 }
