@@ -1,34 +1,49 @@
 # melonJS Plugin Template
 ![melonJS Logo](https://github.com/melonjs/melonJS/raw/master/media/Banner/Banner%20-%20Billboard%20-%20Original%20Logo%20-%20horizontal.png)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/melonjs/es6-boilerplate/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-a plugin project template for melonjs using rollup.
+A starter template for creating [melonJS](https://github.com/melonjs/melonJS) plugins, built with esbuild and TypeScript.
 
-Usage
--------------------------------------------------------------------------------
+## Getting Started
 
-Install all required dependencies :
+1. Clone or fork this repository
+2. Install dependencies:
 
-    $ [sudo] npm install
+       npm install
 
-Replace occurences of `plugin-template` to match with your plugin name in the [package.json](package.json) file
+3. Update `package.json` with your plugin name and description
+4. Implement your plugin in [`src/index.js`](src/index.js)
 
-Start implementing your plugin using the provided [empty plugin](src/index.js) under `/src/index.js`
+## Build
 
-Build your plugin by running: 
+    npm run build
 
-    $ npm run build
+The generated files will be in the `dist/` directory:
+- `index.js` — ES module bundle
+- `index.d.ts` — TypeScript declarations
 
-The generated files will be available under the `dist` directory :
-- `plugin-template.js` (as per the default name in the package.json)
-- `plugin-template.d.ts` (typings for the plugin)
+## Publishing
 
-For more information about plugin and how to patch method, see our documentation [here](https://melonjs.github.io/melonJS/docs/melonjs/plugin.html).
+Update the `name`, `description`, and `version` fields in `package.json`, then:
 
-Questions, need help ?
--------------------------------------------------------------------------------
-If you need technical support, you can contact us through the following channels :
-* Forums: with melonJS 2 we moved to a new discourse [forum](https://melonjs.discourse.group), but we can still also find the previous one [here](http://www.html5gamedevs.com/forum/32-melonjs/)
-* Chat: come and chat with us on [discord](https://discord.gg/aur7JMk)
-* we tried to keep our [wikipage](https://github.com/melonjs/melonJS/wiki) up-to-date with useful links, tutorials, and anything related melonJS.
+    npm publish
+
+## Plugin Structure
+
+```
+src/
+└── index.js       # your plugin entry point
+scripts/
+└── build.ts       # esbuild configuration
+dist/              # generated output (gitignored)
+```
+
+The template extends `plugin.BasePlugin` from melonJS. See the [plugin API docs](https://melonjs.github.io/melonJS/) for available hooks and methods.
+
+## Need Help?
+
+- [Discord](https://discord.gg/aur7JMk) — chat with the community
+- [Forum](https://melonjs.discourse.group) — ask questions
+- [API Docs](https://melonjs.github.io/melonJS/) — full API reference
+- [Wiki](https://github.com/melonjs/melonJS/wiki) — tutorials and guides

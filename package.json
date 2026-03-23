@@ -1,6 +1,6 @@
 {
   "name": "plugin-template",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "melonJS plugin template",
   "type": "module",
   "keywords": [
@@ -23,11 +23,12 @@
   "author": "Olivier Biot (AltByte Pte Ltd)",
   "funding": "https://github.com/sponsors/melonjs",
   "engines": {
-    "node": ">= 19"
+    "node": "^20.19.0 || >=22.12.0"
   },
-  "main": "dist/plugin-template.js",
-  "module": "dist/plugin-template.js",
-  "types": "dist/plugin-template.d.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "sideEffects": false,
   "files": [
     "dist/",
@@ -37,26 +38,17 @@
     "LICENSE"
   ],
   "peerDependencies": {
-    "melonjs": "^15.5.0"
+    "melonjs": ">=18.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.22.9",
-    "@babel/plugin-syntax-import-assertions": "^7.22.5",
-    "@rollup/plugin-commonjs": "^25.0.2",
-    "@rollup/plugin-node-resolve": "^15.0.2",
-    "@rollup/plugin-replace": "^5.0.2",
-    "del-cli": "^5.0.0",
-    "eslint": "^8.44.0",
-    "eslint-plugin-jsdoc": "^46.4.3",
-    "rollup": "^3.26.2",
-    "rollup-plugin-bundle-size": "^1.0.3",
-    "typescript": "^5.1.6"
+    "esbuild": "^0.27.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
   "scripts": {
-    "build": "npm run lint && rollup -c --silent && npm run types",
-    "lint": "eslint src/**.js rollup.config.mjs",
+    "build": "tsx scripts/build.ts && npm run types",
     "prepublishOnly": "npm run build",
-    "clean": "del-cli --force dist",
-    "types": "tsc"
+    "clean": "rm -rf dist",
+    "types": "tsc --project tsconfig.build.json"
   }
 }
