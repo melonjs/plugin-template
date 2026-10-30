@@ -12,13 +12,12 @@ const banner = [
 ].join("\n");
 
 const buildOptions = {
-	entryPoints: ["src/index.js"],
+	entryPoints: ["src/index.ts"],
 	external: ["melonjs"],
 	format: "esm",
 	outdir: "dist",
 	sourcemap: true,
 	bundle: true,
-	define: { __VERSION__: JSON.stringify(packageJson.version) },
 	banner: {
 		js: banner,
 	},
