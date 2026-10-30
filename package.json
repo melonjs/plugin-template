@@ -1,7 +1,8 @@
 {
   "name": "plugin-template",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "melonJS plugin template",
+  "homepage": "https://github.com/melonjs/plugin-template#readme",
   "type": "module",
   "keywords": [
     "2D",
@@ -23,7 +24,7 @@
   "author": "Olivier Biot (AltByte Pte Ltd)",
   "funding": "https://github.com/sponsors/melonjs",
   "engines": {
-    "node": "^20.19.0 || >=22.12.0"
+    "node": ">=24.0.0"
   },
   "types": "./dist/index.d.ts",
   "exports": {
@@ -32,23 +33,40 @@
   "sideEffects": false,
   "files": [
     "dist/",
-    "src/",
     "package.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "peerDependencies": {
-    "melonjs": ">=18.0.0"
+    "melonjs": ">=20.11.0"
   },
   "devDependencies": {
-    "esbuild": "^0.27.3",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "@types/node": "^24.0.0",
+    "@vitest/browser": "^4.1.11",
+    "@vitest/browser-playwright": "^4.1.11",
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.28.0",
+    "melonjs": "^20.11.0",
+    "playwright": "^1.62.1",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.11"
   },
   "scripts": {
+    "dev": "concurrently --raw \"npm run build:watch\" \"npm run types:watch\"",
     "build": "tsx scripts/build.ts && npm run types",
-    "prepublishOnly": "npm run build",
-    "clean": "rm -rf dist",
-    "types": "tsc --project tsconfig.build.json"
+    "build:watch": "tsx scripts/build.ts watch",
+    "types": "tsc --project tsconfig.build.json",
+    "types:watch": "tsc --project tsconfig.build.json --watch --preserveWatchOutput",
+    "test": "vitest run",
+    "test:types": "tsc",
+    "clean": "tsx scripts/clean.ts",
+    "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "overrides": {
+    "vitest": "^4.1.11",
+    "@vitest/browser": "^4.1.11",
+    "@vitest/browser-playwright": "^4.1.11"
   }
 }
